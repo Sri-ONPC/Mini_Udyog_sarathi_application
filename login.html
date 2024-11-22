@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Udyog Saarthi</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4f82e1, #003f73); /* Gradient Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        /* Login Container */
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .login-container:hover {
+            transform: scale(1.03);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #004080;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            font-size: 1.1em;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #004080;
+            background-color: #e1f2f8;
+            box-shadow: 0 0 8px rgba(0, 64, 128, 0.4);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #0059b3;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #004080;
+            transform: translateY(-5px);
+        }
+
+        .signup-link {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #0059b3;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link:hover {
+            color: #003f73;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #0059b3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            color: #003f73;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px;
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .input-field {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Login to Udyog Saarthi</h2>
+        <form action="login-action.php" method="POST">
+            <input type="email" name="email" class="input-field" placeholder="Enter your email" required>
+            <input type="password" name="password" class="input-field" placeholder="Enter your password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <a href="signup.html" class="signup-link">Don't have an account? Sign up here</a>
+        <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+    </div>
+
+</body>
+</html>

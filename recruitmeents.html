@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Categories</title>
+    <style>
+        /* Resetting some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Beautiful gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for effect */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        /* Styling for the image buttons */
+        .job-button {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ffffff;
+        }
+
+        /* Add a smooth hover effect with rotation */
+        .job-button:hover {
+            transform: scale(1.1) rotate(5deg); /* Slight rotation with scale */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+            border-color: #0059b3; /* Change border color on hover */
+        }
+
+        .job-button:active {
+            transform: scale(1); /* Return to normal on click */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Optional: Add a filter effect to the images */
+        .job-button img {
+            width: 200px; /* Fixed size for buttons */
+            height: auto;
+            border-radius: 10px;
+            transition: filter 0.3s ease;
+        }
+
+        /* Apply a filter on hover to make the images more dynamic */
+        .job-button:hover img {
+            filter: brightness(1.1); /* Slightly brighten the image */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Choose Your Job Category</h1>
+
+    <div class="button-container">
+        <!-- Government Jobs Button -->
+        <a href="Government jobs.html">
+            <div class="job-button">
+                <img src="Recruitment1.png" alt="Government Jobs">
+            </div>
+        </a>
+
+        <!-- Private Jobs Button -->
+        <a href="Private Jobs.html">
+            <div class="job-button">
+                <img src="Recruitment2.jpg" alt="Private Jobs">
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>

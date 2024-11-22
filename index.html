@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udyog Saarthi App</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            min-height: 100vh;
+            background: url('213.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            position: relative; /* Important for dropdown positioning */
+        }
+
+        .title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #0059b3;
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #004080;
+            min-width: 180px;
+            border-radius: 5px;
+            z-index: 1;
+            top: 100%; /* To position the dropdown directly below the parent item */
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Google Translate Widget Styling */
+        #google_translate_element {
+            margin-left: 20px;
+            display: inline-block;
+            background-color: #004080;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #133E87;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color:#4A628A;
+        }
+
+        .hero button {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            background-color: #0059b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #003d66;
+        }
+
+        /* Support Cards */
+        .support-section {
+            display: flex;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #004080;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #0059b3;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .card a:hover {
+            color: #003d66;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #cce0ff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <div class="title">Udyog Saarthi</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Support ▼</a>
+            <div class="dropdown-content">
+                <a href="Scholarships.html">Scholarships</a>
+                <a href="Recruitment.html">Recruitment</a>
+                <a href="Government Schemes.html">Government Schemes</a>
+                <a href="Events.html">Events</a>
+            </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+    
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Welcome to Udyog Saarthi</h1>
+    <p>Your ultimate platform for resources, employment, and support for persons with disabilities.</p>
+    <button>Get Started</button>
+</div>
+
+<!-- Support Section with Cards -->
+<section class="support-section">
+    <div class="card">
+        <h3>Scholarships</h3>
+        <p>Find scholarship programs available for persons with disabilities.</p>
+        <a href="Scholarships.html">Learn More</a>
+    </div>
+    <div class="card">
+        <h3>Recruitments</h3>
+        <p>Explore job opportunities and recruitment programs for persons with disabilities.</p>
+        <a href="Recruitment.html">Find Jobs</a>
+    </div>
+    <div class="card">
+        <h3>Events & Workshops</h3>
+        <p>Stay updated on upcoming events and workshops designed to empower you.</p>
+        <a href="Events.html">See Events</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="#privacy">Privacy Policy</a> |
+        <a href="#terms">Terms of Service</a> |
+        <a href="#support">Support</a>
+    </div>
+    <p>&copy; 2024 Udyog Saarthi. All Rights Reserved.</p>
+</footer>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,es,fr,de,it,ja,pt,ru', // You can add or remove languages here
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

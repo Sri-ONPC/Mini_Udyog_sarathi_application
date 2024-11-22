@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Udyog Saarthi</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Form Container */
+        .signup-container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .signup-container h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #004080;
+        }
+
+        /* Input Fields */
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: border 0.3s ease, transform 0.3s ease;
+            padding-left: 20px;
+        }
+
+        .input-field label {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            color: #aaa;
+            font-size: 1.1em;
+            transition: top 0.3s ease, font-size 0.3s ease;
+        }
+
+        .input-field input:focus {
+            border-color: #0059b3;
+            transform: translateY(-2px);
+        }
+
+        .input-field input:focus + label,
+        .input-field input:not(:placeholder-shown) + label {
+            top: -5px;
+            font-size: 0.9em;
+            color: #0059b3;
+        }
+
+        /* Password Visibility Toggle */
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input {
+            padding-right: 40px;
+        }
+
+        .password-container i {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            cursor: pointer;
+            color: #0059b3;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background-color: #0059b3;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #003d66;
+            transform: translateY(-2px);
+        }
+
+        /* Already have an account? */
+        .login-link {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #004080;
+        }
+
+        .login-link a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #0059b3;
+            transition: color 0.3s ease;
+        }
+
+        .login-link a:hover {
+            color: #003d66;
+        }
+
+        /* Animation for Form */
+        .signup-container {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sign Up Form Container -->
+<div class="signup-container">
+    <h2>Join Udyog Saarthi</h2>
+    <form id="signupForm" action="/signup" method="POST">
+        <!-- Full Name -->
+        <div class="input-field">
+            <input type="text" name="full_name" id="full_name" placeholder=" " required>
+            <label for="full_name">Full Name</label>
+        </div>
+
+        <!-- Email Address -->
+        <div class="input-field">
+            <input type="email" name="email" id="email" placeholder=" " required>
+            <label for="email">Email Address</label>
+        </div>
+
+        <!-- Password -->
+        <div class="password-container">
+            <div class="input-field">
+                <input type="password" name="password" id="password" placeholder=" " required>
+                <label for="password">Password</label>
+            </div>
+            <i id="togglePassword" class="fas fa-eye"></i>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-field">
+            <input type="password" name="confirm_password" id="confirm_password" placeholder=" " required>
+            <label for="confirm_password">Confirm Password</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+</div>
+
+<!-- JavaScript -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    // Toggle password visibility
+    const togglePassword = document.getElementById("togglePassword");
+    const password = document.getElementById("password");
+    togglePassword.addEventListener("click", function () {
+        // Toggle the password visibility
+        const type = password.type === "password" ? "text" : "password";
+        password.type = type;
+
+        // Toggle the eye icon
+        this.classList.toggle("fa-eye-slash");
+    });
+
+    // Form validation
+    const signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", function(event) {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm_password").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match. Please try again.");
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>
