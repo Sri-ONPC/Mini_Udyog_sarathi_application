@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Change font style */
+    background-color: #ffffff;
+    margin: 0; /* Remove default margin */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 150vh; /* Full height of the viewport */
+}
+
+.sparkle-background {
+    position: relative;
+    background-color: #fffefe;
+}
+
+.container {
+    background-color: white;
+    padding: 30px; /* Increased padding for more breathing space */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Width of the form */
+    position: relative; /* Position relative for child absolute elements */
+    z-index: 1; /* Ensure the container is above the background */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 30px; /* Increased bottom margin for more space between elements */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+label {
+    margin-bottom: 10px; /* Increased space between label and input */
+}
+
+input, select {
+    width: 100%;
+    padding: 12px; /* Increased padding for better spacing */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Font size for better readability */
+}
+
+button {
+    width: 100%;
+    padding: 12px; /* Increased padding for the button */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Font size for better readability */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Sparkle Effect */
+.sparkle-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://thumbs.dreamstime.com/b/user-profile-icon-abstract-blue-background-illustration-design-isolated-167295690.jpg') repeat; /* Link to a sparkle background image */
+    opacity: 0.5; /* Adjust opacity for effect */
+    animation: sparkle 1.5s infinite; /* Animation to create a sparkling effect */
+    z-index: 0; /* Behind the container */
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8; /* Change opacity to make it sparkle */
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
